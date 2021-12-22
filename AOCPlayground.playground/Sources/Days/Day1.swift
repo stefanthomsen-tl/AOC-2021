@@ -1,23 +1,19 @@
 import Foundation
 
-public class Day1 {
+public class Day1: Day {
+    public var result: Result?
+    
     public init() { }
     
-    public func run() {
+    public func process() {
         let content = "input-day1".openFile
         let lines = content.split(separator: "\n").compactMap { Int($0) }
         
-        let result = Result(day: 1,
+        self.result = Result(day: 1,
                            numberOfLines: lines.count,
                            solution1: { lines.countGreaterThanMultiple() },
                            solution2: { lines.countGreaterThanMultiple(rows: 3) })
-        let start = Date()
-        print("*** Starting day \(result.day) ***")
-        print("number of lines: \(result.numberOfLines)")
-        print("result 1: \(result.solution1())")
-        print("result 2: \(result.solution2())")
-        print("time: \(abs(start.timeIntervalSinceNow))")
-        print("*** ending day \(result.day) ***\n")
+        self.showResult()
     }
 }
 

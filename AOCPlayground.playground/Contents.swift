@@ -1,7 +1,7 @@
 import UIKit
 
 
-//Day1().run()
+let day1 = Day1().process()
 let day = Day2().process()
 
 

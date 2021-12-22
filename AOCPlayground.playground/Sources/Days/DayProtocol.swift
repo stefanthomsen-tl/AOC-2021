@@ -2,6 +2,7 @@ import Foundation
 
 public protocol Day {
     var result: Result? { get set }
+    func process()
 }
 
 extension Day {
